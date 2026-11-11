@@ -1,0 +1,49 @@
+{
+  "name": "diurn",
+  "version": "0.1.0",
+  "description": "Exchange calendars and trading hours for the world's markets, from the Diurn API",
+  "license": "MIT OR Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE-MIT",
+    "LICENSE-APACHE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "exchange calendar",
+    "trading hours",
+    "market holidays",
+    "MIC",
+    "ISO 10383",
+    "temporal"
+  ],
+  "homepage": "https://diurn.io/docs/typescript/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diurn-io/diurn-ts.git"
+  },
+  "bugs": "https://github.com/diurn-io/diurn-ts/issues",
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test \"test/**/*.test.ts\"",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "temporal-polyfill": "1.0.8",
+    "typescript": "6.0.3"
+  }
+}
